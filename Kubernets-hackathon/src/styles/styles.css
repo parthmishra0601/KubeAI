@@ -1,0 +1,601 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #181818; /* Dark background */
+  color: white;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.active-link {
+  font-weight: bold;
+  color: #facc15 !important;
+  border-bottom: 2px solid #facc15;
+  padding-bottom: 5px;
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #e63946;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: white;
+  color: #1e3a8a;
+}
+
+/* Home Page */
+.home-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.home-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-secondary {
+  background-color: #f04e30;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #d63e20;
+}
+
+/* Feature Section */
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.feature-card {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Adjustments */
+.dark-theme .feature-card {
+  background: #444;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth Hover Effects */
+.card:hover, .btn:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Styling */
+.light-theme {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.dark-theme {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.dark-theme .navbar {
+  background-color: #333;
+}
+
+.dark-theme .navbar a {
+  color: #facc15;
+}
+
+/* Smooth Chart Selector */
+.chart-selector, .filter-dropdown {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #1e3a8a;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.chart-selector:hover, .filter-dropdown:hover {
+  transform: scale(1.05);
+}
+
+.dark-theme .chart-selector, .dark-theme .filter-dropdown {
+  background-color: #333;
+  color: white;
+  border: 1px solid white;
+}
+
+/* Tooltip Styling */
+.recharts-tooltip-wrapper {
+  font-size: 14px;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+.form-container {
+  width: 350px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+}
+
+.form-container input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-container .btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-container .btn:hover {
+  background-color: #163a70;
+}
+
+/* 📌 Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .toggle-btn {
+    margin-top: 10px;
+  }
+  
+  .card {
+    width: 90%; /* Cards will take more space on mobile */
+  }
+}
+
+/* Auth Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 🔥 Auth Flip Card Styling */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #1e1e2e;
+}
+
+.auth-card {
+  width: 350px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.auth-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  backface-visibility: hidden;
+}
+
+.auth-signup {
+  transform: rotateY(0deg);
+}
+
+.auth-login {
+  transform: rotateY(180deg);
+}
+
+.auth-card.flipped .auth-signup {
+  transform: rotateY(-180deg);
+}
+
+.auth-card.flipped .auth-login {
+  transform: rotateY(0deg);
+}
+
+/* Input Styles */
+.auth-side input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #6c63ff;
+  border-radius: 5px;
+  background: #f4f4f4;
+  transition: 0.3s;
+}
+
+.auth-side input:focus {
+  border-color: #ff007f;
+  box-shadow: 0px 0px 8px #ff007f;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 10px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff007f;
+}
+
+/* Flip Text */
+.auth-side p span {
+  color: #ff007f;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.auth-side p span:hover {
+  text-decoration: underline;
+}
+.settings-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  background: var(--background);
+  color: var(--text);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.setting-option {
+  margin-bottom: 20px;
+}
+
+.dark-mode-btn {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: #444;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 8px 15px;
+  margin: 5px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: darkblue;
+}
+/* Ensure modal text is visible */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-text {
+  color: black; /* Ensure text is visible */
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+.anomalies-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.anomalies-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.anomalies-table th, .anomalies-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.severity-high { background-color: #c62209; }
+.severity-medium { background-color: #c59e11; }
+.severity-low { background-color: #09ce09; }
+.issues-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  max-width: 800px;
+}
+/* Match Issues with Anomalies & Dashboard */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+.no-issues {
+  font-size: 1.2em;
+  color: #4caf50;
+  text-align: center;
+}
+
+/* Table Formatting */
+.table-container {
+  overflow-x: auto;
+}
+
+.issues-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.issues-table th, .issues-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.issues-table th {
+  background: #f8f8f8;
+  font-weight: bold;
+}
+
+/* Severity-Based Row Styling */
+.severity-high {
+  background: #ffdddd;
+}
+
+.severity-critical {
+  background: #ff5c5c;
+  color: white;
+  font-weight: bold;
+}
+
+/* Style for the contact container */
+.contact-container {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  padding: 20px;
+  max-width: 600px; 
+  margin: auto; 
+  background-color: #f9f9f9; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  height: 100vh; 
+}
+
+/* Style for headings */
+.heading {
+  font-size: 1.5rem; 
+  margin: 20px 0; 
+}
+
+/* Style for form elements */
+.form-group {
+  margin-bottom: 15px; 
+}
+
+/* Style for input and select elements */
+input[type="text"],
+select {
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+}
+
+/* Style for the submit button */
+button {
+  padding: 10px 15px; 
+  background-color: #2D3B55; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+  font-size: 1rem; 
+}
+
+button:hover {
+  background-color: #1A1F30; 
+}
+
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1000; 
+}
+
+/* Popup Container */
+.popup {
+  background: white;
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  width: 300px;
+}
+
+/* Input Fields */
+.popup input[type="password"] {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+}
+
+/* Popup Buttons */
+.popup-buttons {
+  display: flex; 
+  justify-content: space-between; 
+}
+
+.popup-buttons .btn {
+  padding: 10px 15px; 
+  background-color: #2D3B55; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.popup-buttons .btn.cancel {
+  background-color: #ccc; 
+}
+
+.popup-buttons .btn:hover {
+  background-color: #1A1F30; 
+}
